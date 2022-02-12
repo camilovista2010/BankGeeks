@@ -6,6 +6,6 @@ namespace BankGeeks_BackEnd.Dto
     {
         public bool success { get; set; }
         public string message { get; set; }
-        public CalculationRecord calculationRecord { get; set; }
+        public CalculationRecord?  calculationRecord { get; set; }
     }
 }

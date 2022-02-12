@@ -2,7 +2,7 @@
 {
     public class RequestCalculate
     {
-        public int FirstValue { get; set; }
-        public int SecondValue { get; set; }
+        public int firstValue { get; set; }
+        public int secondValue { get; set; }
     }
 }

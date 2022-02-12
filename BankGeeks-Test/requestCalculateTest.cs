@@ -35,7 +35,7 @@ namespace BankGeeks_Test
         [Fact]
         public void PrimerValorMayor0()
         {
-            var request = new RequestCalculate() { FirstValue = 0, SecondValue = 0 };
+            var request = new RequestCalculate() { firstValue = 0, secondValue = 0 };
 
             var result = this.calculate.requestCalculate( request );
 
@@ -45,7 +45,7 @@ namespace BankGeeks_Test
         [Fact]
         public void SegundoValorMayor0()
         {
-            var request = new RequestCalculate() { FirstValue = 5, SecondValue = 0 };
+            var request = new RequestCalculate() { firstValue = 5, secondValue = 0 };
 
             var result = this.calculate.requestCalculate(request);
 
@@ -56,7 +56,7 @@ namespace BankGeeks_Test
         [Fact]
         public void Sumar()
         {
-            var request = new RequestCalculate() { FirstValue = 20, SecondValue = 40 };
+            var request = new RequestCalculate() { firstValue = 20, secondValue = 40 };
 
             var result = this.calculate.requestCalculate(request);
 
@@ -67,7 +67,7 @@ namespace BankGeeks_Test
         [Fact]
         public void PerteneceFibonacci()
         {
-            var request = new RequestCalculate() { FirstValue = 4, SecondValue = 4 };
+            var request = new RequestCalculate() { firstValue = 4, secondValue = 4 };
 
             var result = this.calculate.requestCalculate(request);
 
@@ -88,7 +88,7 @@ namespace BankGeeks_Test
         [Fact]
         public void GuardarCalculo()
         {
-            var request = new RequestCalculate() { FirstValue = 2, SecondValue = 2 };
+            var request = new RequestCalculate() { firstValue = 2, secondValue = 2 };
 
             var result = this.calculate.requestCalculate(request);
 

@@ -1,25 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import { Box, Dialog, DialogContent, DialogTitle, Divider } from '@mui/material';
+import LoadingPage from './components/Loading';
+import FrmCalculate from './components/FrmCalculate';
+import ResponseCalculate from './components/ResponseCalculate';
+import { ResponseContext, responsePayload } from './context/ResponseContext';
+
+
 
 function App() {
+
+  const [valueContext , setvalueContext] = useState({loading : false , response : responsePayload});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ResponseContext.Provider value={{ valueContext , setvalueContext  }} >
+        <CssBaseline />
+      <Dialog
+        fullWidth
+        open={true}
+        maxWidth="xs"
+        sx={{
+          backdropFilter: "blur(5px)",
+          //other styles here
+        }}
+      >
+        <DialogTitle>Sumar dos valores</DialogTitle>
+        <DialogContent> 
+          <FrmCalculate/> 
+          <Divider />
+          <LoadingPage/>
+          <Divider />
+          <ResponseCalculate />
+        </DialogContent> 
+      </Dialog> 
+      <Box
+        sx={{
+          minHeight: "100vh",
+          backgroundSize: "cover",
+        }}
+      ></Box>
+    </ResponseContext.Provider>
   );
 }
 

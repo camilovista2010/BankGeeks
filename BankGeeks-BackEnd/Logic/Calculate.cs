@@ -21,17 +21,17 @@ namespace BankGeeks_BackEnd.Logic
             {
                 if (requestCalculate == null)
                 {
-                    return new ResponseCalculate() { success = false, calculationRecord = null, message = "Es requerido los valores a sumar" };
+                    return new ResponseCalculate() { success = false, message = "Es requerido los valores a sumar" };
                 }
 
-                if (requestCalculate.FirstValue <= 0)
+                if (requestCalculate.firstValue <= 0)
                 {
-                    return new ResponseCalculate() { success = false, calculationRecord = null, message = "Primer valor debe ser superior a 0" };
+                    return new ResponseCalculate() { success = false, message = "Primer valor debe ser superior a 0" };
                 }
 
-                if (requestCalculate.SecondValue <= 0)
+                if (requestCalculate.secondValue <= 0)
                 {
-                    return new ResponseCalculate() { success = false, calculationRecord = null, message = "Segundo valor debe ser superior a 0" };
+                    return new ResponseCalculate() { success = false, message = "Segundo valor debe ser superior a 0" };
                 }
 
                 ResponseCalculate response = new ResponseCalculate()
@@ -40,9 +40,9 @@ namespace BankGeeks_BackEnd.Logic
                     message = "",
                     calculationRecord = new CalculationRecord()
                     {
-                        FirstValue = requestCalculate.FirstValue,
-                        SecondValue = requestCalculate.SecondValue,
-                        Result = requestCalculate.FirstValue + requestCalculate.SecondValue,
+                        FirstValue = requestCalculate.firstValue,
+                        SecondValue = requestCalculate.secondValue,
+                        Result = requestCalculate.firstValue + requestCalculate.secondValue,
                         IsFibonacci = false
                     }
                 };
